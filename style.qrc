@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="font">
+    <file>Mostwasted.ttf</file>
+  </qresource>
+</RCC>

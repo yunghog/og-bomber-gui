@@ -1,3 +1,4 @@
 selenium
 PhantomJS
 requests
+PyQt5

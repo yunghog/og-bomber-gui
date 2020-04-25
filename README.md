@@ -1,20 +1,21 @@
 <img src="image/og-bomber.png" alt="og-bomber">
 
-# og-bomber
+# og-bomber-gui
 
-`stable build v1.0`
+`stable build v1.1`
 
 ### message spoofing | bombing victims with otp texts
 
 > Built with python 3.x.x
 
-> Commandline application
+> Grapical User Interface Application
 
 [![Build Status](https://img.shields.io/badge/version-v01.0-green?style=flat-square)](https://github.com/yunghog/w3bsite13locker)
 [![Python](https://img.shields.io/badge/python-3.7-orange?style=flat-square&logo=python)](https://github.com/yunghog/w3bsite13locker)
 [![Donate](https://img.shields.io/badge/Paypal-Donate-blue?style=flat-square&logo=paypal)](https://paypal.me/samartha890?locale.x=en_GB)
 [![selenium](https://img.shields.io/badge/selenium-3.x-yellow?style=flat-square&logo=PyPi)](https://pypi.org/project/selenium/)
 [![PhantomJS](https://img.shields.io/badge/PhantomJS-2.1.x-yellow?style=flat-square&logo=JavaScript)](https://phantomjs.org/download.html)
+[![PyQt5](https://img.shields.io/badge/PyQt-5.x.x-yellow?style=flat-square&logo=PyPi)](https://pypi.org/project/PyQt5/)
 
 ## Table of Contents
 - [Requirements](#requirements)
@@ -34,6 +35,14 @@
 
 > [PhantomJS](https://phantomjs.org/download.html)
 
+> [PyQt5](https://pypi.org/project/PyQt5/)
+
+### Installing PyQt5
+PyQt5 can be installed by the command
+```shell
+pip install PyQt5
+```
+
 ### Installing Selenium
 Selenium can be installed by the command
 ```shell
@@ -41,14 +50,12 @@ pip install selenium
 ```
 
 ### Installing Requests
-> [requests](https://pypi.org/project/requests/)
 Requests can be installed by the command
 ```shell
 pip install requests
 ```
 
 ### Installing PhantomJS
-> [PhantomJS](https://phantomjs.org/download.html)
 - PhantomJS can be dwonloaded from [here](https://phantomjs.org/download.html)
 - After downloading the zip, extract zip.
 - Place the contents in windows drive. Linux users can skip this step
@@ -59,7 +66,7 @@ conda install -c conda-forge phantomjs
 ```
 
 ## Installation
-- clone the repo into any directory using url : https://github.com/yunghog/og-bomber.git
+- clone the repo into any directory using url : https://github.com/yunghog/og-bomber-gui.git
 ```shel
 git clone https://github.com/yunghog/og-bomber.git
 ```
@@ -76,9 +83,9 @@ We even keep the record of the victims phone number. There are two type of subsc
 quota of 200 sms/day and Premium will have unlimited sms. BLACKLISTING service is available for Premium members. You cannot spoof a Blacklisted number, so they are safe. Become a Premium member by <a href="https://www.paypal.me/samartha890?locale.x=en_GB">Donating</a></p>
 
 ## Usage
-- To start spoofing run `bombOgCli.py` using command
+- To start spoofing run `ogBomberGui.py` using command
 ```python
-python bombOgCli.py
+python ogBomberGui.py
 ```
 - Enter victim number, no. of sms in the command line prompt and hit enter
 - Sometime the server may not respond, you may have to try again later
@@ -93,5 +100,5 @@ python bombOgCli.py
 
 ## Contributing
 - 🍴 Fork this repo!
-- 👯 Clone this repo to your local machine using `https://github.com/yunghog/og-bomber.git`
+- 👯 Clone this repo to your local machine using `https://github.com/yunghog/og-bomber-gui.git`
 - Pull requests

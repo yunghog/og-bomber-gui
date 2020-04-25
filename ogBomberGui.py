@@ -5,17 +5,21 @@
 # Created by: PyQt5 UI code generator 5.9.2
 #
 # WARNING! All changes made in this file will be lost!
-
+import bombDriver as d
+import webbrowser
 from PyQt5 import QtCore, QtGui, QtWidgets
-
-class Ui_OgBOmber(object):
-    def setupUi(self, OgBOmber):
-        OgBOmber.setObjectName("OgBOmber")
-        OgBOmber.resize(800, 600)
-        OgBOmber.setStyleSheet("QTabWidget{\n"
+import getpass
+import time
+import json
+un=getpass.getuser()
+class Ui_OgBomber(object):
+    def setupUi(self, OgBomber):
+        OgBomber.setObjectName("OgBomber")
+        OgBomber.resize(800, 600)
+        OgBomber.setStyleSheet("QTabWidget{\n"
 "background-color: rgb(40, 40, 40);\n"
 "}")
-        self.centralwidget = QtWidgets.QWidget(OgBOmber)
+        self.centralwidget = QtWidgets.QWidget(OgBomber)
         self.centralwidget.setObjectName("centralwidget")
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
         self.tabWidget.setGeometry(QtCore.QRect(0, 0, 801, 601))
@@ -142,7 +146,6 @@ class Ui_OgBOmber(object):
 "color: rgb(170, 255, 0);\n"
 "border: 1px solid rgb(170, 255, 0);\n"
 "}")
-        self.username_2.setReadOnly(True)
         self.username_2.setObjectName("username_2")
         self.line_2 = QtWidgets.QFrame(self.Bomb)
         self.line_2.setGeometry(QtCore.QRect(60, 170, 681, 20))
@@ -249,7 +252,6 @@ class Ui_OgBOmber(object):
 "color: rgb(170, 255, 0);\n"
 "border: 1px solid rgb(170, 255, 0);\n"
 "}")
-        self.username_3.setReadOnly(True)
         self.username_3.setObjectName("username_3")
         self.label_13 = QtWidgets.QLabel(self.Bomb)
         self.label_13.setGeometry(QtCore.QRect(180, 300, 141, 21))
@@ -297,6 +299,7 @@ class Ui_OgBOmber(object):
 "color: rgb(49, 49, 49);\n"
 "}")
         self.bomb.setObjectName("bomb")
+        self.bomb.clicked.connect(self.call_bomb)
         self.label_14 = QtWidgets.QLabel(self.Bomb)
         self.label_14.setGeometry(QtCore.QRect(490, 130, 211, 31))
         palette = QtGui.QPalette()
@@ -381,6 +384,28 @@ class Ui_OgBOmber(object):
 "color:rgb(170, 255, 0);\n"
 "}")
         self.label_15.setObjectName("label_15")
+        self.progressBar = QtWidgets.QProgressBar(self.Bomb)
+        self.progressBar.setGeometry(QtCore.QRect(330, 430, 211, 23))
+        self.progressBar.setAutoFillBackground(False)
+        self.progressBar.setStyleSheet("QProgressBar{\n"
+"color: rgb(170, 255, 0);\n"
+"background-color: rgb(49, 49, 49);\n"
+"border: 2px solid rgb(170, 255, 0);\n"
+"}")
+        self.progressBar.setProperty("value", 0)
+        self.progressBar.setOrientation(QtCore.Qt.Horizontal)
+        self.progressBar.setInvertedAppearance(False)
+        self.progressBar.setObjectName("progressBar")
+        self.label_17 = QtWidgets.QLabel(self.Bomb)
+        self.label_17.setGeometry(QtCore.QRect(240, 420, 81, 41))
+        font = QtGui.QFont()
+        font.setFamily("DejaVu Sans Light")
+        font.setPointSize(12)
+        self.label_17.setFont(font)
+        self.label_17.setStyleSheet("QLabel{\n"
+"color: rgb(170, 255, 0);\n"
+"}")
+        self.label_17.setObjectName("label_17")
         self.tabWidget.addTab(self.Bomb, "")
         self.about = QtWidgets.QWidget()
         self.about.setStyleSheet("QWidget{\n"
@@ -687,6 +712,7 @@ class Ui_OgBOmber(object):
 "color: rgb(49, 49, 49);\n"
 "}")
         self.github.setObjectName("github")
+        self.github.clicked.connect(self.openGithub)
         self.github_2 = QtWidgets.QPushButton(self.about)
         self.github_2.setGeometry(QtCore.QRect(490, 450, 91, 23))
         self.github_2.setStyleSheet("QPushButton{\n"
@@ -701,6 +727,7 @@ class Ui_OgBOmber(object):
 "color: rgb(49, 49, 49);\n"
 "}")
         self.github_2.setObjectName("github_2")
+        self.github_2.clicked.connect(self.openPaypal)
         self.insta = QtWidgets.QPushButton(self.about)
         self.insta.setGeometry(QtCore.QRect(370, 450, 91, 23))
         self.insta.setStyleSheet("QPushButton{\n"
@@ -715,6 +742,7 @@ class Ui_OgBOmber(object):
 "color: rgb(49, 49, 49);\n"
 "}")
         self.insta.setObjectName("insta")
+        self.insta.clicked.connect(self.openInsta)
         self.username = QtWidgets.QLineEdit(self.about)
         self.username.setGeometry(QtCore.QRect(200, 160, 201, 31))
         font = QtGui.QFont()
@@ -780,52 +808,74 @@ class Ui_OgBOmber(object):
 "}")
         self.label_16.setObjectName("label_16")
         self.tabWidget.addTab(self.about, "")
-        OgBOmber.setCentralWidget(self.centralwidget)
+        OgBomber.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(OgBOmber)
+        self.retranslateUi(OgBomber)
         self.tabWidget.setCurrentIndex(0)
-        QtCore.QMetaObject.connectSlotsByName(OgBOmber)
+        QtCore.QMetaObject.connectSlotsByName(OgBomber)
 
-    def retranslateUi(self, OgBOmber):
+    def retranslateUi(self, OgBomber):
         _translate = QtCore.QCoreApplication.translate
-        OgBOmber.setWindowTitle(_translate("OgBOmber", "og-bomber"))
-        self.label.setText(_translate("OgBOmber", "OG Bomber"))
-        self.label_10.setText(_translate("OgBOmber", "Send Bomb"))
-        self.label_11.setText(_translate("OgBOmber", "Phone No. : "))
-        self.cc.setItemText(0, _translate("OgBOmber", "91"))
-        self.cc.setItemText(1, _translate("OgBOmber", "95"))
-        self.cc.setItemText(2, _translate("OgBOmber", "1"))
-        self.label_12.setText(_translate("OgBOmber", "No. of SMS : "))
-        self.label_13.setText(_translate("OgBOmber", "Time delay : "))
-        self.t.setItemText(0, _translate("OgBOmber", "3"))
-        self.t.setItemText(1, _translate("OgBOmber", "5"))
-        self.t.setItemText(2, _translate("OgBOmber", "7"))
-        self.t.setItemText(3, _translate("OgBOmber", "10"))
-        self.bomb.setText(_translate("OgBOmber", "Start Bombing"))
-        self.label_14.setText(_translate("OgBOmber", "Developed by Samartha"))
-        self.label_15.setText(_translate("OgBOmber", "*do not missuse"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.Bomb), _translate("OgBOmber", "Bomb"))
-        self.label_6.setText(_translate("OgBOmber", "SMS Limit : "))
-        self.label_3.setText(_translate("OgBOmber", "Username : "))
-        self.label_4.setText(_translate("OgBOmber", "User ID :"))
-        self.label_5.setText(_translate("OgBOmber", "Subscription : "))
-        self.label_2.setText(_translate("OgBOmber", "User Profile"))
-        self.label_7.setText(_translate("OgBOmber", "OG Bomber"))
-        self.label_8.setText(_translate("OgBOmber", "Developed by Samartha"))
-        self.github.setText(_translate("OgBOmber", "Github"))
-        self.github_2.setText(_translate("OgBOmber", "Donate"))
-        self.insta.setText(_translate("OgBOmber", "Instagram"))
-        self.label_9.setText(_translate("OgBOmber", "*Donate and become a premium member *do not missuse"))
-        self.label_16.setText(_translate("OgBOmber", "*for queries mail me : samarthaog@gmail.com"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.about), _translate("OgBOmber", "About"))
+        OgBomber.setWindowTitle(_translate("OgBomber", "og-bomber"))
+        self.label.setText(_translate("OgBomber", "OG Bomber"))
+        self.label_10.setText(_translate("OgBomber", "Send Bomb"))
+        self.label_11.setText(_translate("OgBomber", "Phone No. : "))
+        self.cc.setItemText(0, _translate("OgBomber", "91"))
+        self.cc.setItemText(1, _translate("OgBomber", "95"))
+        self.cc.setItemText(2, _translate("OgBomber", "1"))
+        self.label_12.setText(_translate("OgBomber", "No. of SMS : "))
+        self.label_13.setText(_translate("OgBomber", "Time delay : "))
+        self.t.setItemText(0, _translate("OgBomber", "3"))
+        self.t.setItemText(1, _translate("OgBomber", "5"))
+        self.t.setItemText(2, _translate("OgBomber", "7"))
+        self.t.setItemText(3, _translate("OgBomber", "10"))
+        self.bomb.setText(_translate("OgBomber", "Start Bombing"))
+        self.label_14.setText(_translate("OgBomber", "Developed by Samartha"))
+        self.label_15.setText(_translate("OgBomber", "*do not missuse"))
+        self.label_17.setText(_translate("OgBomber", "Progress"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.Bomb), _translate("OgBomber", "Bomb"))
+        self.label_6.setText(_translate("OgBomber", "SMS Limit : "))
+        self.label_3.setText(_translate("OgBomber", "Username : "))
+        self.label_4.setText(_translate("OgBomber", "User ID :"))
+        self.label_5.setText(_translate("OgBomber", "Subscription : "))
+        self.label_2.setText(_translate("OgBomber", "User Profile"))
+        self.label_7.setText(_translate("OgBomber", "OG Bomber"))
+        self.label_8.setText(_translate("OgBomber", "Developed by Samartha"))
+        self.github.setText(_translate("OgBomber", "Github"))
+        self.github_2.setText(_translate("OgBomber", "Donate"))
+        self.insta.setText(_translate("OgBomber", "Instagram"))
+        self.label_9.setText(_translate("OgBomber", "*Donate and become a premium member *do not missuse"))
+        self.label_16.setText(_translate("OgBomber", "*for queries mail me : samarthaog@gmail.com"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.about), _translate("OgBomber", "About"))
+        user=d.sendUserInfo(un)
+        self.username.setText(user["uname"])
+        self.userid.setText(user["uid"])
+        self.subscription.setText(user["urole"])
+        self.smslimit.setText(user["uquota"])
 
-
+    def openPaypal(self):
+        webbrowser.open('https://paypal.me/samartha890?locale.x=en_GB')
+    def openGithub(self):
+        webbrowser.open('https://github.com/yunghog')
+    def openInsta(self):
+        webbrowser.open('https://instagram.com/samartha__')
+    def call_bomb(self):
+        pn=self.username_2.text()
+        cc_=self.cc.currentText()
+        un_=un
+        n=self.username_3.text()
+        d.startBombing(pn,cc_,n,un_)
+        m=int(n)
+        for i in range(m+1):
+            a=(i/m)*100
+            self.progressBar.setProperty("value",a)
+            time.sleep(1)
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     OgBOmber = QtWidgets.QMainWindow()
-    ui = Ui_OgBOmber()
+    ui = Ui_OgBomber()
     ui.setupUi(OgBOmber)
     OgBOmber.show()
     sys.exit(app.exec_())

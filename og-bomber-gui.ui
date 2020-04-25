@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>OgBOmber</class>
- <widget class="QMainWindow" name="OgBOmber">
+ <class>OgBomber</class>
+ <widget class="QMainWindow" name="OgBomber">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -1002,6 +1002,59 @@ color:rgb(170, 255, 0);
       </property>
       <property name="text">
        <string>*do not missuse</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="progressBar">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>430</y>
+        <width>211</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QProgressBar{
+color: rgb(170, 255, 0);
+background-color: rgb(49, 49, 49);
+border: 2px solid rgb(170, 255, 0);
+}</string>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="invertedAppearance">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>420</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Light</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+color: rgb(170, 255, 0);
+}</string>
+      </property>
+      <property name="text">
+       <string>Progress</string>
       </property>
      </widget>
     </widget>

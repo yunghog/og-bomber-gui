@@ -11,6 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import getpass
 import time
 import json
+import setup
 un=getpass.getuser()
 class Ui_OgBomber(object):
     def setupUi(self, OgBomber):
@@ -870,6 +871,8 @@ class Ui_OgBomber(object):
             a=(i/m)*100
             self.progressBar.setProperty("value",a)
             time.sleep(1)
+
+from res import style
 
 if __name__ == "__main__":
     import sys

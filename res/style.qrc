@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="font">
+    <file>font/Blancha.ttf</file>
+    <file>font/futura bold italic font.ttf</file>
+    <file>font/DejaVuSans-ExtraLight.ttf</file>
+    <file>font/Mostwasted.ttf</file>
+  </qresource>
+</RCC>

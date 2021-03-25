@@ -72,6 +72,7 @@ git clone https://github.com/yunghog/og-bomber.git
 ```
 - open clonned directory
 - run `setup.py` using command
+- install all fonts in fonts folder
 ```python
 python setup.py
 ```
